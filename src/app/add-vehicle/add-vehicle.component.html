@@ -1,1 +1,44 @@
-<p>add-vehicle works!</p>
+<div class="card mt-4">
+    <div class="card-header">
+        Add Vehicle
+    </div>
+    <div class="card-body">
+        <form [formGroup]="addVehicleForm">
+            <div class="form-group">
+                <label for="make">Enter Vehicle Make</label>
+                <input [class.is-invalid]="
+                (addVehicleForm.get('make').touched|| submitted) &&
+                addVehicleForm.get('make').errors?.required
+                " type="text" class="form-control" id="make" formControlName="make" aria-describedby="makeErr">
+                <span *ngIf="
+                (addVehicleForm.get('make').touched|| submitted) &&
+                addVehicleForm.get('make').errors?.required
+                " id="makeErr" class="error">Please enter make of the vehicle.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Enter vehicle Model</label>
+                <input [class.is-invalid]="
+                (addVehicleForm.get('model').touched|| submitted) &&
+                addVehicleForm.get('model').errors?.required
+                " type="text" class="form-control" id="model" formControlName="model" aria-describedby="modelErr">
+
+                <span *ngIf="
+                (addVehicleForm.get('model').touched|| submitted) &&
+                addVehicleForm.get('model').errors?.required
+                " id="modelErr" class="error">
+                    Please enter model of the vehicle.
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Enter Vehicle Year</label>
+                <input type="number" class="form-control" id="year" formControlName="year" aria-describedby="yearErr">
+                <span *ngIf="year.invalid" id="yearErr" class="error">Please enter year of the Vehicle</span>
+            </div>
+
+            <button (click)="collectVehicle()" class="btn btn-outline-success">Submit</button>
+            <button type="submit" class="btn btn-outline-danger ml-4">Clear</button>
+        </form>
+    </div>
+</div>

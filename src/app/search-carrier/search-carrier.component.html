@@ -1,0 +1,58 @@
+<div class="card mt-4">
+    <div class="card-header">
+        Search
+    </div>
+    <div class="card-body">
+        <form [formGroup]="searchCarrier" (submit)="getCarrier()" class="form-inline">
+            <div class="form-group mb-2">
+                <label for="CarrierName" class="sr-only">Carier ID:</label>
+                <input type="text" readonly class="form-control-plaintext" id="CarrierName" value="Carier ID:">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="CarrierID" class="sr-only">Carrier ID:</label>
+                <input type="text" class="form-control" formControlName="id" id="CarrierID" placeholder="">
+            </div>
+            <button type="submit" class="btn btn-outline-success mb-2">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        Carrier Information
+    </div>
+    <div class="card-body">
+        <form [formGroup]="detailsCarrier">
+            <fieldset disabled>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="cname">Name</label>
+                        <input type="email" class="form-control" id="cname" formControlName="cname" placeholder="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cemail">Email</label>
+                        <input type="email" class="form-control" id="cemail" formControlName="cemail" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cstreet">Street</label>
+                    <input type="text" class="form-control" id="cstreet" formControlName="cstreet" placeholder="">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="ccity">City</label>
+                        <input type="text" class="form-control" id="ccity" formControlName="ccity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cstate">State</label>
+                        <input type="text" class="form-control" id="cstate" formControlName="cstate">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="czip">Zip</label>
+                        <input type="text" class="form-control" id="czip" formControlName="czip">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

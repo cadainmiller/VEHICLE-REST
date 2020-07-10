@@ -1,0 +1,39 @@
+<div class="card mt-4">
+    <div class="card-header">
+        Login
+    </div>
+    <div class="card-body">
+        <form [formGroup]="loginForm" (submit)="loginClick()">
+            <div class="form-group ">
+                <label for="username">Username</label>
+                <input [class.is-invalid]="
+                (loginForm.get('username').touched|| submitted) &&
+                loginForm.get('username').errors?.required
+                " type="text" class="form-control" id="username" formControlName="username"
+                    aria-describedby="usernameErr">
+                <span *ngIf="
+                (loginForm.get('username').touched|| submitted) &&
+                loginForm.get('username').errors?.required
+                " id="usernameErr" class="error">Please enter valid username</span>
+            </div>
+
+            <div class="form-group ">
+                <label for="password">Password</label>
+                <input [class.is-invalid]="
+                (loginForm.get('password').touched|| submitted) &&
+                loginForm.get('password').errors?.required
+                " type="password" class="form-control" id="password" formControlName="password"
+                    aria-describedby="passwordErr">
+                <span *ngIf="
+                (loginForm.get('password').touched|| submitted) &&
+                loginForm.get('password').errors?.required
+                " id="passwordErr" class="error">Please enter valid password.</span>
+            </div>
+            <div class="">
+                <button  type="submit"  class="btn btn-outline-success">Login</button>
+                <button class="btn btn-outline-danger ml-4">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+</div>

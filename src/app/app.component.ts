@@ -5,6 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
+
 export class AppComponent {
-  title = 'CAR-REST-APP';
+
+  SavedToken = true ;
+
+  logOut(){
+    localStorage.removeItem('key');localStorage.removeItem('body');
+  }
+
 }
